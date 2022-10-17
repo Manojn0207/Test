@@ -1,0 +1,37 @@
+<!-- Obtaining value from the product controller -->
+
+<h3>{{viewTitle}}</h3>
+<form action="/product" method="POST">
+    <input type="hidden" name="_id" value="{{product._id}}">
+
+    <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" maxlength="100" class="form-control" name="productName" placeholder="product Name"
+            value="{{product.productName}}">
+
+        <div class="text-danger">
+            {{product.productNameError}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Product ID</label>
+        <input type="number" min='1' max='99999' class="form-control" name="productId" placeholder="product Id"
+            value="{{product.productId}} " required>
+    </div>
+    <div class="form-group">
+        <label>Product Description</label>
+        <input type="text" min='10000' max='99999' class="form-control" name="productDesc" placeholder="product Desc"
+            value="{{product.productDesc}} " required>
+    </div>
+    <div class="form-group col-md-6">
+        <label>Product Price</label>
+        <input type="number" min='20' max="100000" class="form-control" name="productPrice"
+            placeholder="product Price(INR)" "{{product.productPrice}} " required>
+    </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/product/list"><i class="fa fa-list-alt"></i> View All Products</a>
+    </div>
+</form>
